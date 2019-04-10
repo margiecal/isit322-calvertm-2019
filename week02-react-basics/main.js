@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactSimple from './react-simple';
+import ReactBasics from './ReactBasics';
+import {ReactBasicsStateless, ReactBasicsFoo} from './ReactBasicsStateless';
 
 ReactDOM.render(
-    <ReactSimple />,
+    <div>
+    <ReactBasics/>
+    <ReactBasicsFoo/>
+    <ReactBasicsStateless/></div>,
     document.getElementById('root')
 );
