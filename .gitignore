@@ -4,7 +4,13 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-idea
+
+
+bundle.js
+*.js.map
+.idea
+.vscode
+.c9
 
 # Runtime data
 pids
