@@ -8,13 +8,14 @@ class App extends Component {
     this.state = {
       file: 'unknown',
       result: 'unknown',
-      status: 'unknown'
+      status: 'unknown',
+      server: 'unknown'
     };
   }
 
   queryServer = () => {
     const that = this;
-    fetch('/test-routes/foo')
+      fetch(event.target.dataset.url)
         .then(function(response) {
           return response.json();
         })
@@ -38,7 +39,9 @@ class App extends Component {
           <p className="App-intro">
             state: {this.state.status} file: {this.state.file}
           </p>
-          <button onClick={this.queryServer}>Bar</button>
+
+            <button data-url="/test-routes/foo" onClick={this.queryServer}>Test Foo Route</button>
+
         </div>
     );
   }

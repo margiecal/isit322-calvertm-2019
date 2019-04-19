@@ -1,0 +1,28 @@
+{
+    "name": "lookup-server",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "express": "4.16.4"
+    },
+    "scripts": {
+        "start": "concurrently 'npm run server' 'npm run qux' 'npm run client'",
+        "server": "babel-node server/bin/www",
+        "qux": "nodemon qux/bin/www",
+        "client": "babel-node start-client.js",
+        "lint": "eslint ."
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.4.3",
+        "@babel/core": "^7.4.3",
+        "@babel/node": "^7.2.2",
+        "babel-eslint": "^9.0.0",
+        "concurrently": "4.1.0",
+        "elven-code": "^4.6.3",
+        "eslint": "5.12.0",
+        "eslint-config-google": "^0.12.0",
+        "eslint-plugin-import": "2.17.1",
+        "eslint-plugin-jsx-a11y": "6.2.1",
+        "eslint-plugin-react": "7.12.4"
+    }
+}
