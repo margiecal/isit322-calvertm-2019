@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Qux} from "./Qux";
 
 class App extends Component {
   constructor() {
@@ -9,7 +10,8 @@ class App extends Component {
       file: 'unknown',
       result: 'unknown',
       status: 'unknown',
-      server: 'unknown'
+      server: 'unknown',
+      body: {login: 'unknown', id: 'unknown'}
     };
   }
 
@@ -21,6 +23,9 @@ class App extends Component {
         })
         .then(function(json) {
           console.log('parsed json', json);
+          if(json.body){
+            json.body = JSON.parse(json.body);
+          }
           that.setState(foo => (json));
         })
         .catch(function(ex) {
@@ -41,7 +46,7 @@ class App extends Component {
           </p>
 
             <button data-url="/test-routes/foo" onClick={this.queryServer}>Test Foo Route</button>
-
+            <Qux queryServer = {this.queryServer}/>
         </div>
     );
   }
