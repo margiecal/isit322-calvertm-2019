@@ -30,15 +30,23 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo"/>
-            <h2>Welcome to React</h2>
-          </div>
+          <ElfHeader/>
 
           <p className="App-intro">
             state: {this.state.status} file: {this.state.file}
           </p>
+
+            <p className="App-intro">
+                result: {this.state.result} server: {this.state.server}
+            </p>
           <button onClick={this.queryServer}>Bar</button>
+
+          <TestRoutes queryServer = {this.queryServer}/>
+          <Qux queryServer = {this.queryServer}/>
+
+          <GetUser queryServer = {this.queryServer}/>
+
+          <GetGist queryServer={this.queryServer} fetchGistList={this.fetchGistList}/>
         </div>
     );
   }

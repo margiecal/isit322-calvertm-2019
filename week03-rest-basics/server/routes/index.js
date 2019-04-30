@@ -10,7 +10,11 @@ router.get('/', function(req, res) {
         title: 'Elf-Express'
     });
 });
+router.get('/git-gist-you-rang'), function(request, response, next){
 
+}
+
+/*  This is in get-gist microservice server
 router.get('/get-basic-list', function(request, response) {
     logger.log('GET BASIC LIST CALLED');
     let gh = getGitHub();
@@ -39,7 +43,7 @@ router.get('/get-basic-list', function(request, response) {
             response.status(500).send({ result: err });
         });
 });
-
+*/
 
 
 module.exports = router;
