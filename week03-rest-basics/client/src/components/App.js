@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
+import GitUser from './GitUser';
+import ElfHeader from './ElfHeader';
+import GetGist from './GitGist';
+import Qux from './Qux';
+import TestRoutes from './TestRoutes';
 
 class App extends Component {
   constructor() {
@@ -26,6 +31,18 @@ class App extends Component {
           console.log('parsing failed, URL bad, network down, or similar', ex);
         });
   };
+
+  fetchGitList = (event) => {
+      const that = this;
+
+      fetch(event.target.dataset.url)
+          .then(function(response){
+              return response.json();
+          })
+          .then(function(json){
+              .....
+          })
+  }
 
   render() {
     return (
