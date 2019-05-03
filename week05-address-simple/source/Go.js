@@ -7,7 +7,7 @@ class Go extends React.Component {
         this.state = {result: 'unknown'};
     }
 
-    setData = (json) => {
+    setFooData = (json) => {
         console.log('parsed json', json);
         this.setState(json);
     };
@@ -33,12 +33,12 @@ class Go extends React.Component {
 
                 <button
                     id='foobar'
-                    onClick={(event) => this.elfQuery('/foo', this.setData, event)}>
+                    onClick={(event) => this.elfQuery('/foo', this.setFooData, event)}>
                     Query Foo
                 </button>
                 <button
                     id='barbar'
-                    onClick={(event) => this.elfQuery('/bar', this.setData, event)}>
+                    onClick={(event) => this.elfQuery('/bar', this.setFooData, event)}>
                     Query Bar
                 </button>
                 <p>Hello {this.state.result}</p>
