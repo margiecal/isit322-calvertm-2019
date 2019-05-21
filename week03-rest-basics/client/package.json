@@ -12,6 +12,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "sanity-tests": "react-scripts test sanity-tests/Sanity*",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
