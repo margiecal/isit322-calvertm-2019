@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const verify = require('./verify');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -57,22 +56,10 @@ const addresList = [
     }
 ];
 
-router.get('/address-list', function(request, response) {
+router.get('/address-list', function(req, res) {
     'use strict';
-    console.log('ADDRESS LIST', request.query);
-    response.send(addressList)
+    console.log('ADDRESS LIST', req.query);
+    res.send(addresList)
 });
 
-router.get('/test-verify', function(request, response) {
-    'use strict';
-    console.log('Test Verify called', request.query);
-    verify(request.query.token)
-        .then(decodedToken => {
-        response.send({result: 'Verified', decodedToken: decodedToken});
-    })
-        .catch(function(error) {
-            console.log(error);
-            response.send(error);
-        });
-});
 module.exports = router;

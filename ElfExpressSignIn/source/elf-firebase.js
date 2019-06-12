@@ -10,13 +10,13 @@
 // find the Settings Gear, choose Project Settings, and scroll down a bit.
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC4S7cscHl-DTxsz1rIO_xDW7Tc329u-bk",
-    authDomain: "tryagain2019-19831.firebaseapp.com",
-    databaseURL: "https://tryagain2019-19831.firebaseio.com",
-    projectId: "tryagain2019-19831",
-    storageBucket: "tryagain2019-19831.appspot.com",
-    messagingSenderId: "137324122479",
-    appId: "1:137324122479:web:96caae78650eef4e"
+    apiKey: "YOUR CONFIG HERE",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
 };
 // Initialize Firebase
 window.firebase.initializeApp(firebaseConfig);
