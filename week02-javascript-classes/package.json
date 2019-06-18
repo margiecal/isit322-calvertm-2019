@@ -1,0 +1,31 @@
+{
+  "name": "week02-javascript-classes",
+  "version": "1.0.0",
+  "description": "Class",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "scripts": {
+  "start": "node index.js",
+  "test": "jest"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/margiecal/isit322-calvertm-2019.git"
+  },
+  "keywords": [
+    "javascript",
+    "class",
+    "require"
+  ],
+  "author": "Margie Calvert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/margiecal/isit322-calvertm-2019/issues"
+  },
+  "homepage": "https://github.com/margiecal/isit322-calvertm-2019#readme",
+  "dependencies": {
+    "jest": "^24.8.0"
+  }
+}

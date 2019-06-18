@@ -1,15 +1,15 @@
+const display = require('./utilities').display;
+
 class State {
-    constructor () {
+    constructor() {
         this.stateName = 'Washington';
         this.capital = 'Olympia';
     }
 
     getFullName() {
-        return this.capital + ', '+ this.stateName;
+        return this.capital + ', ' + this.stateName;
     }
 }
-
-
 
 const state = new State();
 display(state.stateName);
