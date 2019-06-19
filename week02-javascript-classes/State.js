@@ -11,7 +11,6 @@ class State {
     }
 }
 
-
 /*
 utils.divider("State");
 const state = new State();
@@ -23,4 +22,3 @@ utils.display("state and capital: " + state.getFullName());
 */
 
 module.exports = State;
-

@@ -16,11 +16,9 @@ class Calculator {
     }
 }
 
-Calculator.prototype.multiply = () => {
+Calculator.prototype.multiply = function() {
     return this.operand01 * this.operand02;
 };
-
-
 
 /*
 const calculator = new Calculator();
@@ -41,4 +39,3 @@ utils.display(
 */
 
 module.exports = Calculator;
-
