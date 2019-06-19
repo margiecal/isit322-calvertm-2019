@@ -1,4 +1,4 @@
-const display = require('./utilities').display;
+//const utils = require('./utilities');
 
 class State {
     constructor() {
@@ -11,7 +11,16 @@ class State {
     }
 }
 
+
+/*
+utils.divider("State");
 const state = new State();
-display(state.stateName);
-display(state.capital);
-display(state.getFullName());
+
+
+utils.display("state: " + state.stateName);
+utils.display("capital: " + state.capital);
+utils.display("state and capital: " + state.getFullName());
+*/
+
+module.exports = State;
+

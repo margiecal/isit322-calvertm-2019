@@ -1,10 +1,10 @@
-const utils = require('./utilities');
+//const utils = require('./utilities');
 //const {display} = import('./utilities'); //this doesn't work in Node.js yet
 
 class Calculator {
-    constructor() {
-        this.operand01 = 2;
-        this.operand02 = 12;
+    constructor(operand01, operand02) {
+        this.operand01 = operand01;
+        this.operand02 = operand02;
     }
 
     add() {
@@ -16,6 +16,13 @@ class Calculator {
     }
 }
 
+Calculator.prototype.multiply = () => {
+    return this.operand01 * this.operand02;
+};
+
+
+
+/*
 const calculator = new Calculator();
 
 Calculator.prototype.multiply = (a, b) => {
@@ -31,5 +38,7 @@ utils.display(
     'multiply: ' +
         calculator.multiply(calculator.operand01, calculator.operand02)
 );
+*/
 
 module.exports = Calculator;
+
