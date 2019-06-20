@@ -6,20 +6,43 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            file: 'unknown',
             result: 'unknown',
-            status: 'unknown'
+            server: 'unknown',
+            message: 'unknown'
         };
     }
 
     queryServer = () => {
         const that = this;
+
+        fetch('/qux-you-rang')
+
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(json) {
+                console.log('parsed json', json);
+
+                that.setState(foo => json);
+            })
+            .catch(function(ex) {
+                console.log(
+                    'parsing failed, URL bad, network down, or similar',
+                    ex
+                );
+            });
+    };
+
+    queryServer2 = () => {
+        const that = this;
+
         fetch('/test-routes/foo')
             .then(function(response) {
                 return response.json();
             })
             .then(function(json) {
                 console.log('parsed json', json);
+
                 that.setState(foo => json);
             })
             .catch(function(ex) {
@@ -39,9 +62,10 @@ class App extends Component {
                 </div>
 
                 <p className="App-intro">
-                    state: {this.state.status} file: {this.state.file}
+                    result: {this.state.result} server: {this.state.server}  message: {this.state.message}
                 </p>
-                <button onClick={this.queryServer}>Bar</button>
+                <button data-url="/test-routes/foo" onClick={this.queryServer2}>Test Foo Route</button>
+                <button data-url="/qux/qux-you-rang" onClick={this.queryServer}>Test Qux</button>
             </div>
         );
     }

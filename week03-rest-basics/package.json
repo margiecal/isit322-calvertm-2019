@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "express": "4.16.4"
+    "express": "4.16.4",
+    "morgan": "^1.9.1",
+    "request": "^2.88.0"
   },
   "scripts": {
-    "start": "concurrently 'npm run server' 'npm run client'",
+    "start": "concurrently 'npm run server' 'npm run client' 'npm run qux'",
     "server": "babel-node server/bin/www",
     "client": "babel-node start-client.js",
+    "qux": "nodemon qux/bin/www",
     "lint": "eslint ."
   },
   "devDependencies": {
