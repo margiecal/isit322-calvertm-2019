@@ -10,9 +10,11 @@ router.get('/', function(req, res) {
 });
 
 router.get('/:id', function(request, response) {
-    response.send({'result': 'success', server: 'qux', message: 'I, Qux, am up and running.'});
+    response.send({
+        result: 'success',
+        server: 'qux',
+        message: 'I, Qux, am up and running.'
+    });
 });
-
-
 
 module.exports = router;

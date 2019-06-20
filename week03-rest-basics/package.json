@@ -3,15 +3,17 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "express": "4.16.4",
-    "morgan": "^1.9.1",
-    "request": "^2.88.0"
+    "express": "4.16.4"
   },
   "scripts": {
-    "start": "concurrently 'npm run server' 'npm run client' 'npm run qux'",
+    "start": "concurrently 'npm run server' 'npm run client' 'npm run qux' 'npm run git-gist' 'npm run git-user' 'npm run markdown' 'npm run git-socket'",
     "server": "babel-node server/bin/www",
     "client": "babel-node start-client.js",
-    "qux": "nodemon qux/bin/www",
+    "qux": "nodemon micros/qux/bin/www",
+    "git-gist": "nodemon micros/git-gist/bin/www",
+    "git-user": "nodemon micros/git-user/bin/www",
+    "markdown": "nodemon micros/markdown/bin/www",
+    "git-socket": "nodemon micros/git-socket/bin/www",
     "lint": "eslint ."
   },
   "devDependencies": {

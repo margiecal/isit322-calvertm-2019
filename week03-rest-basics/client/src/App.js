@@ -12,11 +12,10 @@ class App extends Component {
         };
     }
 
-    queryServer = (event) => {
+    queryServer = event => {
         const that = this;
 
         fetch(event.target.dataset.url)
-
             .then(function(response) {
                 return response.json();
             })
@@ -33,7 +32,6 @@ class App extends Component {
             });
     };
 
-
     render() {
         return (
             <div className="App">
@@ -43,10 +41,39 @@ class App extends Component {
                 </div>
 
                 <p className="App-intro">
-                    result: {this.state.result} server: {this.state.server}  message: {this.state.message}
+                    result: {this.state.result} server: {this.state.server}{' '}
+                    message: {this.state.message}
                 </p>
-                <button data-url="/test-routes/foo" onClick={this.queryServer}>Test Foo Route</button>
-                <button data-url="/qux-you-rang" onClick={this.queryServer}>Test Qux</button>
+                <button data-url="/test-routes/foo" onClick={this.queryServer}>
+                    Test Foo Route
+                </button>
+                <button data-url="/qux-you-rang" onClick={this.queryServer}>
+                    Test Qux
+                </button>
+                <button
+                    data-url="/git-gist-you-rang"
+                    onClick={this.queryServer}
+                >
+                    Test Git Gist
+                </button>
+                <button
+                    data-url="/git-user-you-rang"
+                    onClick={this.queryServer}
+                >
+                    Test Git User
+                </button>
+                <button
+                    data-url="/markdown-you-rang"
+                    onClick={this.queryServer}
+                >
+                    Test Markdown
+                </button>
+                <button
+                    data-url="/git-socket-you-rang"
+                    onClick={this.queryServer}
+                >
+                    Test Git Socket
+                </button>
             </div>
         );
     }
