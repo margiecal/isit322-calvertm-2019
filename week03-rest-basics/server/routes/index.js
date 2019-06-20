@@ -13,9 +13,9 @@ router.get('/', function(req, res) {
 });
 
 router.get('/qux-you-rang', function(request, response, next) {
-    console.log("In server qux-you-rang, this is response: " + JSON.parse(response);
+
     requester('http://localhost:30027/qux-you-rang').pipe(response);
-    console.log("requester: " + JSON.parse(response);
+
 });
 
 module.exports = router;

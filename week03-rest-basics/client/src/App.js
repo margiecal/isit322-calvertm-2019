@@ -12,10 +12,10 @@ class App extends Component {
         };
     }
 
-    queryServer = () => {
+    queryServer = (event) => {
         const that = this;
 
-        fetch('/qux-you-rang')
+        fetch(event.target.dataset.url)
 
             .then(function(response) {
                 return response.json();
@@ -33,25 +33,6 @@ class App extends Component {
             });
     };
 
-    queryServer2 = () => {
-        const that = this;
-
-        fetch('/test-routes/foo')
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(json) {
-                console.log('parsed json', json);
-
-                that.setState(foo => json);
-            })
-            .catch(function(ex) {
-                console.log(
-                    'parsing failed, URL bad, network down, or similar',
-                    ex
-                );
-            });
-    };
 
     render() {
         return (
@@ -64,8 +45,8 @@ class App extends Component {
                 <p className="App-intro">
                     result: {this.state.result} server: {this.state.server}  message: {this.state.message}
                 </p>
-                <button data-url="/test-routes/foo" onClick={this.queryServer2}>Test Foo Route</button>
-                <button data-url="/qux/qux-you-rang" onClick={this.queryServer}>Test Qux</button>
+                <button data-url="/test-routes/foo" onClick={this.queryServer}>Test Foo Route</button>
+                <button data-url="/qux-you-rang" onClick={this.queryServer}>Test Qux</button>
             </div>
         );
     }
