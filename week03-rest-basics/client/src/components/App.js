@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ElfHeader from "./ElfHeader";
-
 import '../App.css';
 
 class App extends Component {
@@ -36,7 +35,6 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-               
                 <ElfHeader />
                 <p className="App-intro">
                     result: {this.state.result} server: {this.state.server}{' '}
