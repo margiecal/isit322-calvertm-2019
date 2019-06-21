@@ -8,5 +8,4 @@ const ElfHeader = () => (
      </div>
 );
 
-
 export default ElfHeader;

@@ -1,6 +1,7 @@
 import React from 'react';
 
-const queryServer = event => {
+export queryServer = event => {
+	console.log("In queryServer.");
         const that = this;
 
         fetch(event.target.dataset.url)
@@ -21,7 +22,7 @@ const queryServer = event => {
     };
 
 
-export default queryServer;
+
 
 
 

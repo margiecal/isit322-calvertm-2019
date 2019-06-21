@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ElfHeader from "./ElfHeader";
+import {queryServer} from "./queryServer";
 import '../App.css';
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
         };
     }
 
-    queryServer = event => {
+    /*queryServer = event => {
         const that = this;
 
         fetch(event.target.dataset.url)
@@ -30,7 +31,7 @@ class App extends Component {
                     ex
                 );
             });
-    };
+    };*/
 
     render() {
         return (
