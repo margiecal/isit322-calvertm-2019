@@ -1,28 +1,23 @@
-import React from 'react';
-
-export queryServer = event => {
-	console.log("In queryServer.");
-        const that = this;
+const queryServer = (event) => {
+    return new Promise((resolve, reject) => {
+        console.log("In queryWrapper.");
 
         fetch(event.target.dataset.url)
-            .then(function(response) {
+            .then(function (response) {
                 return response.json();
             })
-            .then(function(json) {
+            .then(function (json) {
                 console.log('parsed json', json);
-
-                that.setState(foo => json);
+                resolve(json);
             })
-            .catch(function(ex) {
+            .catch(function (ex) {
                 console.log(
                     'parsing failed, URL bad, network down, or similar',
                     ex
                 );
+                reject(ex);
             });
-    };
+    });
+};
 
-
-
-
-
-
+export {queryServer};

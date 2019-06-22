@@ -13,25 +13,9 @@ class App extends Component {
         };
     }
 
-    /*queryServer = event => {
-        const that = this;
-
-        fetch(event.target.dataset.url)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(json) {
-                console.log('parsed json', json);
-
-                that.setState(foo => json);
-            })
-            .catch(function(ex) {
-                console.log(
-                    'parsing failed, URL bad, network down, or similar',
-                    ex
-                );
-            });
-    };*/
+    queryWrapper = event => {
+        queryServer(event).then(response => { this.setState(response)})
+    };
 
     render() {
         return (
@@ -41,33 +25,33 @@ class App extends Component {
                     result: {this.state.result} server: {this.state.server}{' '}
                     message: {this.state.message}
                 </p>
-                <button data-url="/test-routes/foo" onClick={this.queryServer}>
+                <button data-url="/test-routes/foo" onClick={this.queryWrapper}>
                     Test Foo Route
                 </button>
-                <button data-url="/qux-you-rang" onClick={this.queryServer}>
+                <button data-url="/qux-you-rang" onClick={this.queryWrapper}>
                     Test Qux
                 </button>
                 <button
                     data-url="/git-gist-you-rang"
-                    onClick={this.queryServer}
+                    onClick={this.queryWrapper}
                 >
                     Test Git Gist
                 </button>
                 <button
                     data-url="/git-user-you-rang"
-                    onClick={this.queryServer}
+                    onClick={this.queryWrapper}
                 >
                     Test Git User
                 </button>
                 <button
                     data-url="/markdown-you-rang"
-                    onClick={this.queryServer}
+                    onClick={this.queryWrapper}
                 >
                     Test Markdown
                 </button>
                 <button
                     data-url="/git-socket-you-rang"
-                    onClick={this.queryServer}
+                    onClick={this.queryWrapper}
                 >
                     Test Git Socket
                 </button>
