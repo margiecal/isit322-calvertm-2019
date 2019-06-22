@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import ElfHeader from "./ElfHeader";
-import {queryServer} from "./queryServer";
-import '../App.css';
+import ElfHeader from './ElfHeader';
+import { queryServer } from './queryServer';
+import Foo from './Foo';
+import Qux from './Qux';
+import GitGist from './GitGist';
+import GitUser from './GitUser';
+import Markdown from './Markdown';
+import GitSocket from './GitSocket';
+import '../css/App.css';
 
 class App extends Component {
     constructor() {
@@ -14,7 +20,9 @@ class App extends Component {
     }
 
     queryWrapper = event => {
-        queryServer(event).then(response => { this.setState(response)})
+        queryServer(event).then(response => {
+            this.setState(response);
+        });
     };
 
     render() {
@@ -25,36 +33,12 @@ class App extends Component {
                     result: {this.state.result} server: {this.state.server}{' '}
                     message: {this.state.message}
                 </p>
-                <button data-url="/test-routes/foo" onClick={this.queryWrapper}>
-                    Test Foo Route
-                </button>
-                <button data-url="/qux-you-rang" onClick={this.queryWrapper}>
-                    Test Qux
-                </button>
-                <button
-                    data-url="/git-gist-you-rang"
-                    onClick={this.queryWrapper}
-                >
-                    Test Git Gist
-                </button>
-                <button
-                    data-url="/git-user-you-rang"
-                    onClick={this.queryWrapper}
-                >
-                    Test Git User
-                </button>
-                <button
-                    data-url="/markdown-you-rang"
-                    onClick={this.queryWrapper}
-                >
-                    Test Markdown
-                </button>
-                <button
-                    data-url="/git-socket-you-rang"
-                    onClick={this.queryWrapper}
-                >
-                    Test Git Socket
-                </button>
+                <Foo />
+                <Qux />
+                <GitGist />
+                <GitUser />
+                <Markdown />
+                <GitSocket />
             </div>
         );
     }

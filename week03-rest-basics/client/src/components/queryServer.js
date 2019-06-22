@@ -1,16 +1,16 @@
-const queryServer = (event) => {
+const queryServer = event => {
     return new Promise((resolve, reject) => {
-        console.log("In queryWrapper.");
+        console.log('In queryServer.');
 
         fetch(event.target.dataset.url)
-            .then(function (response) {
+            .then(function(response) {
                 return response.json();
             })
-            .then(function (json) {
+            .then(function(json) {
                 console.log('parsed json', json);
                 resolve(json);
             })
-            .catch(function (ex) {
+            .catch(function(ex) {
                 console.log(
                     'parsing failed, URL bad, network down, or similar',
                     ex
@@ -20,4 +20,4 @@ const queryServer = (event) => {
     });
 };
 
-export {queryServer};
+export { queryServer };
