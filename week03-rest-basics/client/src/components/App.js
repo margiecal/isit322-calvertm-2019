@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ElfHeader from './ElfHeader';
 import { queryServer } from './queryServer';
+import { queryWrapper } from './queryWrapper';
 import Foo from './Foo';
 import Qux from './Qux';
 import GitGist from './GitGist';
