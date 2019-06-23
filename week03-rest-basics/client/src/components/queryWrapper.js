@@ -1,24 +1,18 @@
-import { queryServer } from './queryServer';
+import React from 'react';
+import {queryServer} from './queryServer';
+import {appInit} from './app-init';
 
 
-const queryWrapper = event => {
-    let myResult = {
-        result: 'unknown',
-        server: 'unknown',
-        message: 'unknown'
-    };
+const queryWrapper = (event, props) => {
+
+
 
     queryServer(event).then(response => {
-        myResult.state = {
-            result: response.result,
-            server: response.server,
-            message: response.message
-        };
-        console.log ("Query Wrapper Result state: " + myResult.state);
-        return myResult.state;
-    });
-};
 
-
+        let appInit = {appInit};
+        console.log("App Init message 1" + appInit.message);
+        appInit.message = response.message;
+        console.log("App Init message 2" + appInit.message);
+})};
 
 export { queryWrapper };
